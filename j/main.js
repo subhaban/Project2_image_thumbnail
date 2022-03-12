@@ -25,13 +25,14 @@ function init() {
   
   //with JS active, hide all images
   slides.forEach((slide) => {
+    slide.classList.remove("visible","abs-pos");
     slide.classList.add("hide","abs-pos");
   });
 
   //with JS active, hide all images
   althumb.forEach((thumbnail) =>{
-    thumbnail.classList.add("hide","abs-pos");
-  });
+    thumbnail.classList.add("hide","abs-pos")});
+
   hathumb.forEach((thumbnail) => { 
     thumbnail.classList.add("hide","abs-pos");
   });
@@ -42,8 +43,6 @@ function init() {
   
   // show the first slide
   slides[0].classList.remove("hide");
-
-  // show the first slide
   althumb[0].classList.remove("hide");
   hathumb[0].classList.remove("hide");
   ysthumb[0].classList.remove("hide");
@@ -63,24 +62,31 @@ function init() {
 }
 // Autoplay
 
- const frame = document.querySelector(".frame");
+ /*const frame = document.querySelector(".frame");
  const slideshow =frame.querySelectorAll("img");
  const caption = document.querySelector(".caption");
 
  var count = 0;
 
  if (count <= slideshow.length ){
-   setInterval (function(){
+   setInterval (function(timer){
     slideshow[0].src =slideshow[count].src;
     caption.innerHTML = slideshow[count].alt;
      count++;
     
-     if(count === slideshow.length ){
+     if(count == slideshow.length ){
        count = 0;
      }
-   }, 1000);
+     caption.innerHTML = slideshow[count-1].alt;
+   }, 2000);
   
- }
+ }*/
+ const plcontainer = document.querySelector(".placecontainer");
+ const heading = document.querySelectorAll(".headtitle");
+ plcontainer.style.border="none";
+ plcontainer.style.marginLeft = "-70px";
+ //heading.classList.add("hide");
+ 
  
 function changeSlide(e) {
     // stop link from trying to reload page
@@ -90,7 +96,7 @@ function changeSlide(e) {
      
     }
     
-    //shortcut vars
+    //shortcut vars for changeSlide fuctions
     const frame = document.querySelector(".frame");
    const slides = frame.querySelectorAll("img");
     let showing = document.querySelector(".current");
@@ -130,62 +136,99 @@ nextUp = showing.previousElementSibling;
    
   }
   
-
-  
  // const showImageBtn= document.querySelector(".showinmagebtn");
 
 //showImageBtn.addEventListenerer("click",alshowImage);
 
 
    
-/*function alshowImage(){
+//function alshowImage(){
   
-      const back_btn = document.querySelector(".back-btn");
-      const next_btn = document.querySelector(".next-btn");
- const frame = document.querySelector(".frame");
- const slide = frame.querySelector("#alaska");
- const showcase = slide.querySelector("img");
- showcase.classList.remove('hide');
- var imageArr =["al1.png","al2.png","al3.png","al4.png","al5.png"];
- var i=0;
- next_btn.addEventListener("click",changeImage);
- back_btn.addEventListener("click", changeImage);
+      //const back_btn = document.querySelector(".back-btn");
+      //const next_btn = document.querySelector(".next-btn");
+
+ //showcase.classList.remove('hide');
+ //var imageArr =["al1.png","al2.png","al3.png","al4.png","al5.png"];
+ //var i=0;
+ //next_btn.addEventListener("click",changeImage);
+ //back_btn.addEventListener("click", changeImage);
  //caption.innerHTML = frame.firstElementChild.alt;
 
- function changeImage(){
-   showcase.setAttribute("src",imageArr[i]);
-      i++;
-      if( i > imageArr.length){ i=0;
-        
-      }
-      
-    }
+ //function changeImage(){
+  
+////const imagebtn = document.getElementById('showimagebtn');
 
-}*/
-const imagebtn = document.getElementById('showimagebtn');
+//imagebtn.addEventListener('click',e =>{
+//  alchangeSlide(e);
+//});
 
-imagebtn.addEventListener('click',e =>{
-  alchangeSlide(e);
-});
+function althumbShow(e){
+  //if(e){
+   // e.preventDefault();
+   // clearInterval(myInterval);
+   
+  
+  const frame = document.querySelector(".frame");
+  const firstImage = frame.querySelector("#alaska");
+  const imageShow = firstImage.getElementById("al1");
+  console.log(e);
+
+  //const slides = document.querySelector("#alaska");
+  // let showing = slides.querySelector(".current");
+  // console.log("showing");
+  // const caption = document.querySelector(".caption");
+  // const myImages = e.target.querySelectorAll("IMG");
+   //const slides = myImages.querySelectorAll("IMG");
+ //frame.src = myImages.getAttribute("src");
+ //  
+ //  let nextUp = "";
+};
+
 
 function alchangeSlide(e){
   if(e){
     e.preventDefault();
-    //clearInterval(myInterval);
+    clearInterval(myInterval);
   }
   //shortcut vars
-  const images = e.target.querySelectorAll("IMG");
   const frame = document.querySelector(".frame");
- const holder = document.createDocumentFragment();
- clearInterval(myInterval);
- images.forEach((item)=> {
-   holder.appendChild(item);
-   console.log(holder);
- });
+  const myImages = e.target.querySelectorAll("img");
+
+
+
+  
+  }
+//const myImageSrc= document.getElementById("al1").src
+ // myImages.addEventListener("click",function(){
+    //frame.src = myImages.getAttribute("src");
+
+   //const al = document.querySelector(".al");
+  // const althumb = al.querySelectorAll("img");
+  //const myImages = frame.querySelector("#alaska");
+  // let showing = slides.querySelectorAll("img");
+   
+
+
+
+  // const caption = document.querySelector(".caption")
+ 
+  // const frame = document.querySelector(".frame");
+  //frame.src=images.getAttribute.src; 
+ //const  myImage = document.getElementById("almainimage"); 
+ //myImage.addEventListener("click",function(){
+  // frame.src = myImage.src;
+
+
+ //const holder = document.createDocumentFragment();
+
+ //images.forEach((item)=> {
+  // holder.appendChild(item);
+  // console.log(holder);
+ //});
   //frame.innerHTML = images;
-  console.log('change albumn');
-  frame.appendChild(holder);
-}
+  //console.log('change albumn');
+ // frame.appendChild(holder);
+
 
   
   //const image = slides.getAttribute.src("img");
