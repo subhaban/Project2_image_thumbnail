@@ -85,7 +85,7 @@ function init() {
  const heading = document.querySelectorAll(".headtitle");
  plcontainer.style.border="none";
  plcontainer.style.marginLeft = "-70px";
- //heading.classList.add("hide");
+ plcontainer.classList.add("headvisible");
  
  
 function changeSlide(e) {
@@ -163,15 +163,24 @@ nextUp = showing.previousElementSibling;
 //});
 
 function althumbShow(e){
-  //if(e){
-   // e.preventDefault();
-   // clearInterval(myInterval);
-   
+  if(e){
+  // e.preventDefault();
+   clearInterval(myInterval);
+  }
   
-  const frame = document.querySelector(".frame");
-  const firstImage = frame.querySelector("#alaska");
-  const imageShow = firstImage.getElementById("al1");
+  const al = document.querySelector(".al");
+  const althumb = al.querySelectorAll("img");
+  const tbcontain = document.querySelector(".tbcontainer");
+  althumb.forEach((thumbnail) =>{
+  thumbnail.classList.remove("hide","abs-pos");
+  tbcontain.classList.add("col");
+  
+
+  });
+    
+    
   console.log(e);
+
 
   //const slides = document.querySelector("#alaska");
   // let showing = slides.querySelector(".current");
@@ -185,7 +194,7 @@ function althumbShow(e){
 };
 
 
-function alchangeSlide(e){
+/*function alchangeSlide(e){
   if(e){
     e.preventDefault();
     clearInterval(myInterval);
@@ -194,9 +203,6 @@ function alchangeSlide(e){
   const frame = document.querySelector(".frame");
   const myImages = e.target.querySelectorAll("img");
 
-
-
-  
   }
 //const myImageSrc= document.getElementById("al1").src
  // myImages.addEventListener("click",function(){
