@@ -161,165 +161,33 @@ nextUp = showing.previousElementSibling;
 //imagebtn.addEventListener('click',e =>{
 //  alchangeSlide(e);
 //});
+const al = document.querySelector(".al");
+const althumb = al.querySelectorAll("img");
+const mainImage= document.querySelector("#mainimage");
 
 function althumbShow(e){
   if(e){
-  // e.preventDefault();
+  //e.preventDefault();
    clearInterval(myInterval);
   }
-  
-  const al = document.querySelector(".al");
-  const althumb = al.querySelectorAll("img");
+ 
   const tbcontain = document.querySelector(".tbcontainer");
+
   althumb.forEach((thumbnail) =>{
   thumbnail.classList.remove("hide","abs-pos");
   tbcontain.classList.add("col");
-  
-
-  });
-    
-    
-  console.log(e);
-
-
-  //const slides = document.querySelector("#alaska");
-  // let showing = slides.querySelector(".current");
-  // console.log("showing");
-  // const caption = document.querySelector(".caption");
-  // const myImages = e.target.querySelectorAll("IMG");
-   //const slides = myImages.querySelectorAll("IMG");
- //frame.src = myImages.getAttribute("src");
- //  
- //  let nextUp = "";
-};
-
-
-/*function alchangeSlide(e){
-  if(e){
-    e.preventDefault();
-    clearInterval(myInterval);
-  }
-  //shortcut vars
-  const frame = document.querySelector(".frame");
-  const myImages = e.target.querySelectorAll("img");
-
-  }
-//const myImageSrc= document.getElementById("al1").src
- // myImages.addEventListener("click",function(){
-    //frame.src = myImages.getAttribute("src");
-
-   //const al = document.querySelector(".al");
-  // const althumb = al.querySelectorAll("img");
-  //const myImages = frame.querySelector("#alaska");
-  // let showing = slides.querySelectorAll("img");
-   
-
-
-
-  // const caption = document.querySelector(".caption")
  
-  // const frame = document.querySelector(".frame");
-  //frame.src=images.getAttribute.src; 
- //const  myImage = document.getElementById("almainimage"); 
- //myImage.addEventListener("click",function(){
-  // frame.src = myImage.src;
+});
+}  
 
+althumb.forEach(img => img.addEventListener("click",imgClick));
 
- //const holder = document.createDocumentFragment();
-
- //images.forEach((item)=> {
-  // holder.appendChild(item);
-  // console.log(holder);
- //});
-  //frame.innerHTML = images;
-  //console.log('change albumn');
- // frame.appendChild(holder);
-
-
-  
-  //const image = slides.getAttribute.src("img");
-   /*let showing = slides.querySelector(".current");
-   const caption = slides.querySelector(".caption");
-   let nextUp = "";
-
-   if(!e || e.target.className == 'next-btn') {
-     nextUp = showing.nextElementSibling;
-   } else {
-    nextUp = showing.previousElementSibling;
-   }
-
-   // deactivate current image
-   showing.classList.toggle("hide");
-   showing.classList.toggle("current");
-   
-   //make sure next image is there
-   if (!nextUp) {
-     nextUp = slides[slides.length - 1];
-   }
- 
-   if (nextUp.nodeName !== "IMG") {
-     nextUp = slides[0];
-   }
- 
-   // activate next image
-   nextUp.classList.toggle("hide");
-   nextUp.classList.toggle("current");
-
-   // change caption text
-
-   caption.innerHTML = nextUp.alt;
-  
- }
- 
-
- /* const frame = document.querySelector(".frame");
- const alaskaslide = frame.querySelector("#alaska");
-const alaskaslideshow = alaskaslide.querySelectorAll("img");
-  let nextUp = "";
-  
-  if(e.target.className == 'next-btn') {
-    nextUp = showing.nextElementSibling;
-  }
-
-  if(e.target.className == 'back-btn') {
-    nextUp = showing.previousElementSibling;
-  }
-  
-  // deactivate current image
-  showing.classList.toggle("hide");
-  showing.classList.toggle("current");
-  
-  //make sure next image is there
-  if (!nextUp) {
-    nextUp = alaskaslideshow[alaskaslide.length - 1];
-  }
-
-  if (nextUp.nodeName !== "IMG") {
-    nextUp = slides[0];
-  }
-
-  // activate next image
-  nextUp.classList.toggle("hide");
-  nextUp.classList.toggle("current");
+function imgClick(e) {
+  mainImage.src = e.target.src;
 
 }
+ 
+ 
 
 
-
-//alslideshow.style.visibility="visible";
-
-//next_btn.addEventListener("click",changeSlide);
-//back_btn.addEventListener("click", changeSlide);
-//caption.innerHTML = frame.firstElementChild.alt;
-
-     
-    // const alaska = document.querySelectorAll("#alaska");
-     //const displaybtn = alaska.querySelectorAll("showimage");
-
-   */  
-     
-       
-     
-     
-
-   
+ 
